@@ -56,16 +56,14 @@ body {
   font-family: monospace, Arial, sans-serif;
   font-size: calc(11rem / 16); /* = 11px */
   font-weight: normal;
-
+  background-color: #0c0c0c; /* needs to be hardcoded to load instantly, else flash of white*/
 	color: var(--color);
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
   cursor: move;
   user-select: none;
-  
 }
-
 
 a {
 	color: rgb(0,100,200);
@@ -78,8 +76,14 @@ a:visited {
 	color: rgb(0,80,160);
 }
 
+fieldset {
+  width: max-content;
+}
 label {
 	display: block;
+}
+legend {
+  width: max-content;
 }
 
 input, button, select, textarea {
@@ -159,7 +163,7 @@ button:disabled {
   shape-rendering: geometricPrecision;
 }
 
-.themeBorder {
+.theme-border {
   outline: 1px solid rgba(0, 0, 0, 0.6);
   border-left: var(--themeColor2);
   border-right: var(--themeColor1);
@@ -167,4 +171,32 @@ button:disabled {
   border-bottom: var(--themeColor1);
   border-width: 2px;
   border-style: solid;
+}
+
+.tooltip, .tooltip-arrow-up {
+  background-color: black;
+  color: #e2e2e2;
+  position: absolute;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  text-align: center;
+  border-radius: 4px;
+  padding: 12px;
+}
+.tooltip-arrow-up::before {
+  content: ' ';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.bg-on-hover:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
 }
