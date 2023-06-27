@@ -149,7 +149,7 @@ var cnItems = {
     "COST": "成本",
     "Every level increases SPEED by 5%, but doubles the COST.": "每级速度增加 5%，但成本加倍。",
     "Increases the speed of a cheese cycle.": "提高奶酪循环的速度。",
-    "LV": "左室",
+    "LV": "等级",
     "Overclocking": "超频",
     "SPEED": "速度",
     "thoughts/cycle": "想法/循环",
