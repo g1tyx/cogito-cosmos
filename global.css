@@ -1,0 +1,202 @@
+
+html[data-theme="dark"] {
+  --background-color:  #0c0c0c;
+  --color: white;
+  --color-rgb: 255,255,255;
+  --Gray300: #E0E0E0;
+  --Gray400: #BDBDBD;
+  --Gray500: #9E9E9E;
+  --Gray600: #757575;
+  --Gray700: #616161;
+  --Gray800: #424242;
+  --Gray900: #212121;
+
+  /* --Gray50: #F9FAFB;
+  --Gray100: #F3F4F6;
+  --Gray200: #E5E7EB;
+  --Gray300: #D1D5DB;
+  --Gray400: #9CA3AF;
+  --Gray500: #6B7280;
+  --Gray600: #4B5563;
+  --Gray700: #374151;
+  --Gray800: #1F2937;
+  --Gray900: #111827; */
+}
+html[data-theme="light"] {
+  --background-color: rgb(187, 187, 187);
+  --color: black;
+  --color-rgb: 0,0,0;
+  --Gray900: #E0E0E0;
+  --Gray800: #BDBDBD;
+  --Gray700: #9E9E9E;
+  --Gray600: #757575;
+  --Gray500: #616161;
+  --Gray400: #424242;
+  --Gray300: #212121;
+}
+
+html {
+  --primary: #BB86Fc;
+  --primary-variant: #3700B3;
+  --secondary: #03DAC6;
+  --secondary-variant: #018786;
+  --error: #CF6679;
+  --high-emphasis: 87%;
+  --medium-emphasis: 60%;
+  --disabled: 38%;
+  
+  --window-gap: 36px;
+  --btn-gap: 8px;
+  --window-width: calc(500px);
+  font-size: 100%; /* = 1rem (default for browsers is 16px) */
+}
+
+body {
+  text-rendering: geometricPrecision;
+  font-family: monospace, Arial, sans-serif;
+  font-size: calc(11rem / 16); /* = 11px */
+  font-weight: normal;
+  background-color: #0c0c0c; /* needs to be hardcoded to load instantly, else flash of white*/
+	color: var(--color);
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+  cursor: move;
+  user-select: none;
+}
+
+a {
+	color: rgb(0,100,200);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:visited {
+	color: rgb(0,80,160);
+}
+
+fieldset {
+  width: max-content;
+}
+label {
+	display: block;
+}
+legend {
+  width: max-content;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	-webkit-padding: 4px;
+	padding: 4px;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+button, .button-border {
+  --background-color: var(--Gray800);
+  background-color: var(--background-color);
+  width:max-content;
+  color: var(--color);
+
+  outline: 1px solid rgba(0, 0, 0, 1);
+  border-left: rgba(255, 255, 255, 0.5);
+  border-right: rgba(0, 0, 0, 0.6);
+  border-top: rgba(255, 255, 255, 0.5);
+  border-bottom: rgba(0, 0, 0, 0.6);
+  border-width: 2px;
+  border-style: solid;
+}
+
+button:not(.disabled):active  {
+  border-right: rgba(255, 255, 255, 0.5);
+  border-left: rgba(0, 0, 0, 0.6);
+  border-bottom: rgba(255, 255, 255, 0.5);
+  border-top: rgba(0, 0, 0, 0.6);
+  border-width: 2px;
+  border-style: solid;
+}
+
+button:hover {
+  cursor: pointer;
+}
+button.disabled {
+  opacity: var(--medium-emphasis);
+  cursor: move
+}
+button:disabled {
+  opacity: var(--disabled);
+  pointer-events: none;
+}
+
+
+.flexRowContainer {
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  gap: 16px;
+}
+.flexCenter {
+  display:flex; 
+  justify-content:center; 
+  align-items:center
+}
+.gridColumn {
+  display: grid;
+  width: max-content;
+  grid-template-columns: 1fr;
+  gap: var(--btn-gap); 
+}
+
+.resourceDisplay {
+  font-size: 1rem;
+}
+
+.cross-grid-light {
+  background: linear-gradient(180deg, var(--Gray900) 64%, transparent 0) 0 11px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 3%, transparent 0) 5px 0,
+    linear-gradient(90deg, var(--Gray900) 64%, transparent 0) 11px 0,
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 3%, transparent 0) 5px 5px;
+  background-size: 30px 30px;
+  shape-rendering: geometricPrecision;
+}
+
+.theme-border {
+  outline: 1px solid rgba(0, 0, 0, 0.6);
+  border-left: var(--themeColor2);
+  border-right: var(--themeColor1);
+  border-top: var(--themeColor2);
+  border-bottom: var(--themeColor1);
+  border-width: 2px;
+  border-style: solid;
+}
+
+.tooltip, .tooltip-arrow-up {
+  background-color: black;
+  color: #e2e2e2;
+  position: absolute;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  text-align: center;
+  border-radius: 4px;
+  padding: 12px;
+}
+.tooltip-arrow-up::before {
+  content: ' ';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.bg-on-hover:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
